@@ -26,8 +26,8 @@ Nothing else: no Node.js, no accounts, no configuration.
 1. **Get the code**
 
    ```bash
-   git clone <repo-url>
-   cd <repo-folder>
+   git clone https://github.com/bhaveshdhapolaGit/product-catalogue.git
+   cd product-catalogue
    ```
 
 2. **Check Docker is running and the ports are free.** Start Docker Desktop if it isn't running.
