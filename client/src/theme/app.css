@@ -1,0 +1,261 @@
+/* Styles for the app's components. Only use the variables from tokens.css here (no hard-coded colours or fonts). */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-brand);
+}
+
+h1 {
+  font-size: var(--font-size-xl);
+  margin: var(--space-4) 0 var(--space-3);
+}
+
+h2 {
+  font-size: var(--font-size-lg);
+}
+
+button {
+  font: inherit;
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  border-radius: var(--radius);
+  background: var(--color-brand);
+  color: var(--color-brand-contrast);
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+input,
+textarea {
+  font: inherit;
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  width: 100%;
+}
+
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+.error,
+.field-error {
+  color: var(--color-error);
+}
+
+.field-error {
+  font-size: var(--font-size-sm);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Header */
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-3);
+}
+
+.brand {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.search-bar {
+  display: flex;
+  gap: var(--space-2);
+  flex: 1 1 280px;
+  max-width: 480px;
+}
+
+/* The browser's built-in clear ("x") button on search inputs (Chrome, Edge, Safari). */
+.search-bar input[type='search']::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.category-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  list-style: none;
+  margin: 0;
+  padding: var(--space-3) 0;
+}
+
+.category-nav a {
+  text-decoration: none;
+  color: var(--color-text-muted);
+}
+
+.category-nav a.active {
+  color: var(--color-brand);
+  font-weight: 600;
+}
+
+/* Product grid and tiles */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-5);
+}
+
+.product-tile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.product-tile:hover,
+.product-tile:focus-visible {
+  border-color: var(--color-brand);
+}
+
+.product-tile__image {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+}
+
+.product-tile__image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-tile__title {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  margin: 0 0 var(--space-2);
+  flex: 1;
+}
+
+.product-tile__price {
+  font-weight: 700;
+  margin: 0;
+}
+
+.product-tile__rating {
+  color: var(--color-rating);
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+/* Product detail */
+.product-detail {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-5);
+  padding: var(--space-4) 0 var(--space-5);
+}
+
+.product-detail__image {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  display: flex;
+  justify-content: center;
+}
+
+.product-detail__image img {
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.product-detail__price {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+/* Enquiry */
+.enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+.form-field label {
+  font-weight: 500;
+}
+
+.enquiry-form button {
+  align-self: flex-start;
+  margin-top: var(--space-3);
+}
+
+.enquiry-thanks {
+  padding: var(--space-4);
+  border: 1px solid var(--color-success);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.enquiry-thanks h3 {
+  color: var(--color-success);
+  margin-top: 0;
+}

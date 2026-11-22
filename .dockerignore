@@ -1,0 +1,6 @@
+# Docker builds use the repo root as context; keep local installs, build output and secrets out.
+**/node_modules
+**/dist
+**/.env
+.git
+*.pdf
